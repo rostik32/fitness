@@ -4,12 +4,28 @@
             <h2 class="contacts__title section-title">Contacts Us</h2>
             <form action="#" class="contacts__form">
                 <input type="mail" class="contacts__input" placeholder="Email">
-                <select name="subject" class="contacts__input contacts__select">
-                    <option disabled selected>Subject</option>
-                    <option value="1">value 1</option>
-                    <option value="2">value 2</option>
-                    <option value="3">value 3</option>
-                </select>
+                <div class="dropdown contacts__input">
+                    <div class="dropdown__toggle">
+                        Subject
+                    </div>
+                    <ul class="dropdown__menu">
+                        <li class="dropdown__item">
+                            <input type="radio" name="value" value="value1" id="value1" class="dropdown__input" hidden>
+                            <label class="dropdown__label" for="value1">value1</label>
+                        </li>
+
+                        <li class="dropdown__item">
+                            <input type="radio" name="value" value="value2" id="value2" class="dropdown__input" hidden>
+                            <label class="dropdown__label" for="value2">value2</label>
+                        </li>
+
+                        <li class="dropdown__item">
+                            <input type="radio" name="value" value="value3" id="value3" class="dropdown__input" hidden>
+                            <label class="dropdown__label" for="value3">value3</label>
+                        </li>
+                    </ul>
+                    <i class="dropdown__arrow"></i>
+                </div>
                 <textarea class="contacts__input contacts__textarea" name="#" id="" cols="30" rows="10"
                     placeholder="Write Your Message Here..."></textarea>
                 <button class="contacts__btn">SUBMIT</button>
