@@ -68,28 +68,28 @@ $(document).ready(function () {
 });
 
 const videoBtn = document.querySelectorAll('.videoBtn'),
-      slideVideo = document.querySelectorAll('.video-slide-video');
+  slideVideo = document.querySelectorAll('.video-slide-video');
 
 videoBtn.forEach((item, i) => {
-item.addEventListener('click' , function(){
-  slideVideo[i].play();
-  item.style.display = 'none';
-});
+  item.addEventListener('click', function () {
+    slideVideo[i].play();
+    item.style.display = 'none';
+  });
 });
 
 slideVideo.forEach((item, i) => {
-item.addEventListener('click' , function(){
-  item.pause();
-  videoBtn[i].style.display = 'block';
-});
+  item.addEventListener('click', function () {
+    item.pause();
+    videoBtn[i].style.display = 'block';
+  });
 });
 
 
 // burger-menu  
 
 const burger = document.querySelector('.burger'),
-      headerNav = document.querySelector('.header-main__list'),
-      body = document.body;
+  headerNav = document.querySelector('.header-main__list'),
+  body = document.body;
 
 burger.addEventListener('click', () => {
   burger.classList.toggle('active');
@@ -97,6 +97,20 @@ burger.addEventListener('click', () => {
   body.classList.toggle('lock');
 });
 
-const slickDisabled = document.querySelector('.trainers__photos .slick-arrow.slick-disabled');
+// DROPDOWN MENU
 
-console.log(slickDisabled);
+const dropdownMenu = document.querySelector('.dropdown__menu'),
+  dropdownToggle = document.querySelector('.dropdown__toggle'),
+  dropdownInput = document.querySelectorAll('.dropdown__input');
+
+dropdownToggle.addEventListener('click', () => {
+  dropdownMenu.classList.toggle('open');
+});
+
+dropdownInput.forEach(function(item) {
+  item.addEventListener('change', () => {
+    let inputValue = item.value;
+    dropdownToggle.textContent = inputValue;
+    dropdownMenu.classList.remove('open');
+  });
+});
