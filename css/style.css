@@ -1728,12 +1728,28 @@ body.lock {
   font-size: 18px;
   font-weight: 500;
   line-height: 22px;
-  color: #bbbbbb;
+  color: #fff;
   margin: 0 0 21px 0;
 }
 
-.contacts__select {
-  background-color: transparent;
+.contacts__input::-webkit-input-placeholder {
+  color: #BBBBBB;
+}
+
+.contacts__input::-moz-placeholder {
+  color: #BBBBBB;
+}
+
+.contacts__input:-ms-input-placeholder {
+  color: #BBBBBB;
+}
+
+.contacts__input::-ms-input-placeholder {
+  color: #BBBBBB;
+}
+
+.contacts__input::placeholder {
+  color: #BBBBBB;
 }
 
 .contacts__textarea {
@@ -1795,6 +1811,59 @@ body.lock {
           justify-content: space-between;
   max-width: 150px;
   width: 100%;
+}
+
+.dropdown {
+  position: relative;
+  padding: 0;
+}
+
+.dropdown__menu {
+  position: absolute;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  left: -1px;
+  top: 90%;
+  border: 1px solid #ff6c2c;
+  display: none;
+}
+
+.dropdown__menu.open {
+  display: block;
+}
+
+.dropdown__arrow {
+  position: absolute;
+  border: 10px solid transparent;
+  border-top: 10px solid #73A1C2;
+  top: 50%;
+  right: 25px;
+  -webkit-transform: translateY(-20%);
+      -ms-transform: translateY(-20%);
+          transform: translateY(-20%);
+}
+
+.dropdown__toggle {
+  color: #BBBBBB;
+  padding: 20px 25px;
+  cursor: pointer;
+}
+
+.dropdown__label {
+  display: block;
+  padding: 5px 20px;
+  background-color: #292f39;
+  cursor: pointer;
+}
+
+.dropdown__label:hover {
+  background-color: #212630;
+}
+
+.dropdown__input:checked + .dropdown__label {
+  color: #ff6c2c;
 }
 
 .footer-main__wrapper {
