@@ -1593,8 +1593,12 @@ body {
     font-size: 18px;
     font-weight: 500;
     line-height: 22px;
-    color: #bbbbbb;
+    color: #fff;
     margin: 0 0 21px 0;
+
+    &::placeholder {
+      color: #BBBBBB;
+    }
            
     @media (max-width: 991px) {
       width: 90%;
@@ -1602,9 +1606,6 @@ body {
     }
   }
 
-  &__select {
-    background-color: transparent;
-  }
 
   &__textarea {
     width: 100%;
@@ -1675,6 +1676,56 @@ body {
   }
 }
 
+.dropdown {
+  position: relative;
+  padding: 0;
+
+  &__menu {
+    position: absolute;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    left: -1px;
+    top: 90%;
+    border: 1px solid #ff6c2c;
+    display: none;
+
+    &.open {
+      display: block;
+    }
+  }
+
+  &__arrow {
+    position: absolute;
+    border: 10px solid transparent;
+    border-top: 10px solid #73A1C2;
+    top: 50%;
+    right: 25px;
+    transform: translateY(-20%);
+  }
+
+  &__toggle {
+    color: #BBBBBB;
+    padding: 20px 25px;
+    cursor: pointer;
+  }
+
+  &__label {
+    display: block;
+    padding: 5px 20px;
+    background-color: #292f39;
+    cursor: pointer;
+
+    &:hover {
+      background-color: #212630;
+    }
+  }
+
+  &__input:checked + &__label{
+    color: #ff6c2c;
+  }
+}
 // -----------footer-------------
 
 .footer-main {
